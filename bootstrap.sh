@@ -41,3 +41,9 @@ then
 	chef_install=https://www.opscode.com/chef/install.sh
 	curl -L $chef_install -v 11.4.4_2 | sudo bash
 fi
+
+# Install Berkshelf
+sudo apt-get --no-install-recommends -y install \
+	libxml2-dev \
+	libxslt-dev
+sudo gem install berkshelf
