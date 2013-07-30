@@ -11,3 +11,7 @@ environment for me to hack in. It does the following:
 ```
 vagrant up
 ```
+
+# Vagrant Plugins
+
+The [berkshelf plugin](https://github.com/RiotGames/vagrant-berkshelf) must be installed.
