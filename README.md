@@ -15,3 +15,7 @@ vagrant up
 # Vagrant Plugins
 
 The [berkshelf plugin](https://github.com/RiotGames/vagrant-berkshelf) must be installed.
+
+# Environment Variables
+
+ * `USE_32BIT`: uses the 32-bit "precise32" base box instead of the default 64bit "precise64" box when initially creating vm

@@ -1,13 +1,15 @@
 require "json"
 
+BOX = if ENV["USE_32BIT"] then "precise32" else "precise64" end
+
 # Chef run list and attributes
 RUN_LIST = %w{git zsh nodejs parshap}
 ATTRIBUTES = JSON.parse(File.read("attributes.json"))
 
 Vagrant.configure("2") do |config|
   # Box
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = BOX
+  config.vm.box_url = "http://files.vagrantup.com/#{BOX}.box"
 
   # SSH
   config.ssh.forward_agent = true
