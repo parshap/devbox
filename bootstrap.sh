@@ -34,12 +34,12 @@ then
 fi
 
 # Install Chef 11.4.4
-chef_version=11.4.4
+chef_install="https://www.opscode.com/chef/install.sh"
+chef_version=11.6.0
 chef_version_current=$(chef-solo --version | awk ' { sub(/Chef: /, ""); print }')
 if [ "$chef_version_current" != "$chef_version" ]
 then
-	chef_install=https://www.opscode.com/chef/install.sh
-	curl -L $chef_install -v 11.4.4_2 | sudo bash
+	curl -L $chef_install | sudo bash -s - -v $chef_version
 fi
 
 # Install Berkshelf
