@@ -12,6 +12,14 @@ Vagrant.configure("2") do |config|
   # SSH
   config.ssh.forward_agent = true
 
+  # Give all users access to ssh agent socket
+  config.vm.provision :shell do |shell|
+    shell.inline = <<-EOH
+        chmod a+x $(dirname $SSH_AUTH_SOCK)
+        chmod a+rw $SSH_AUTH_SOCK
+    EOH
+  end
+
   # Provision
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.berkshelf.enabled = true
