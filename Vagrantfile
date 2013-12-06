@@ -1,9 +1,6 @@
 require "json"
 
 BOX = if ENV["USE_32BIT"] then "precise32" else "precise64" end
-
-# Chef run list and attributes
-RUN_LIST = %w{git zsh nodejs parshap}
 ATTRIBUTES = JSON.parse(File.read("attributes.json"))
 
 Vagrant.configure("2") do |config|
@@ -27,8 +24,6 @@ Vagrant.configure("2") do |config|
   config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
     chef.json = ATTRIBUTES
-    RUN_LIST.each do |recipe|
-      chef.add_recipe recipe
-    end
+    chef.add_recipe "parshap"
   end
 end
