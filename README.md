@@ -1,21 +1,37 @@
-This tool uses [Vagrant](http://vagrantup.com) to provision an
-environment for me to hack in. It does the following:
+# devbox
 
- * Creates and configures my user account (using the [parshap
-   coookbook](https://github.com/parshap/parshap-cookbook))
+This is a set of tools to provision an environment for me to hack in
+using *[Chef][]*. It creates my user account and configures the system
+and configures the system using the [parshap coookbook][].
 
- * Installs software (git, zsh, node.js)
+It works by copying all required cookbooks to the target and then
+running `chef-solo`.
 
-# Usage
+[chef]: http://www.opscode.com/chef/ "Opscode Chef"
+[parshap cookbook]: https://github.com/parshap/parshap-cookbook "parshap-cookbook on GitHub"
 
+## Usage
+
+**Install [Berkshelf][] first** and then just clone this repository.
+
+[berkshelf]: http://berkshelf.com/
+
+### Local Host
+
+To provision your local host use `run-local.sh`.
+
+### Remote Host
+
+To provision a remote host use `run-remote.sh [user@]hostname`. For example:
+
+```bash
+$ run-remote.sh parshap@dev.parshap.com
 ```
-vagrant up
-```
 
-# Vagrant Plugins
+### Vagrant
 
-The [berkshelf plugin](https://github.com/RiotGames/vagrant-berkshelf) must be installed.
+To use Vagrant to provision a virtual machine use `vagrant up`.
 
-# Environment Variables
-
- * `USE_32BIT`: uses the 32-bit "precise32" base box instead of the default 64bit "precise64" box when initially creating vm
+Use the `USE_32BIT` environment variable to use a 32-bit "precise32"
+base box instead of the default 64bit "precise64" box when initially
+creating the virtual machine.
