@@ -6,9 +6,6 @@ attributes=$(cat attributes.json)
 # Remote directory to copy files to
 target=$(ssh $host mktemp -d)
 
-# Clean build files
-rm -rf ./build
-
 # Build cookbooks
 ./build.sh
 
