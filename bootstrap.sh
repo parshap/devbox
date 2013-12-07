@@ -3,6 +3,16 @@
 # Originally from https://gist.github.com/ruliana/5079371
 # This script will bootstrap a machine with Ruby and Chef
 
+apt_install() {
+	sudo apt-get install --yes --no-install-recommends $@
+}
+
+# Install add-apt-repository
+apt_install python-software-properties
+
+# Add Ruby PPA
+sudo add-apt-repository ppa:brightbox/ruby-ng-experimental
+
 # apt-get update once per day
 touch -d "-1 day" /tmp/apt_update_limit
 if [ /tmp/apt_update_limit -nt /tmp/apt_update_last ]
@@ -11,39 +21,20 @@ then
 	touch /tmp/apt_update_last
 fi
 
-# Install deps
-sudo apt-get --no-install-recommends -y install \
-	build-essential \
-	wget \
-	curl
+# Install Ruby
+apt_install ruby2.0 ruby2.0-dev
 
-# Install Ruby 2.0.0-p247
-ruby_version=2.0.0-p247
-ruby_version_current=$(ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"')
-if [ "$ruby_version_current" != "$ruby_version" ]
-then
-	ruby_name=ruby-$ruby_version
-	ruby_file=$ruby_name.tar.gz
-	cd /tmp
-	wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/$ruby_file
-	tar -xvzf $ruby_file
-	cd $ruby_name
-	./configure --prefix=/usr/local
-	make
-	sudo make install
-fi
+# Install build tools
+apt_install build-essential
 
-# Install Chef 11.4.4
-chef_install="https://www.opscode.com/chef/install.sh"
-chef_version=11.6.0
-chef_version_current=$(chef-solo --version | awk ' { sub(/Chef: /, ""); print }')
+# Install Chef
+chef_version=11.8.2
+chef_version_current=$(sudo chef-solo --version | awk ' { sub(/Chef: /, ""); print }')
 if [ "$chef_version_current" != "$chef_version" ]
 then
-	curl -L $chef_install | sudo bash -s - -v $chef_version
+	sudo gem install --no-ri --no-rdoc chef -v $chef_version
 fi
 
-# Install Berkshelf
-sudo apt-get --no-install-recommends -y install \
-	libxml2-dev \
-	libxslt-dev
-sudo gem install berkshelf
+# SmartOS notes
+# pkgin -y install gcc47 gcc47-runtime gmake
+# gem install --no-ri --no-rdoc chef

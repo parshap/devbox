@@ -9,6 +9,7 @@ PROVISION_SCRIPT = <<-EOH
 
   # Run Chef
   cd /vagrant
+  ./bootstrap.sh
   ./solo.sh build "$(cat attributes.json)"
 EOH
 

@@ -19,6 +19,9 @@ ssh $host <<EOF
 	# Change directory to where files were copied
 	cd $target
 
+	# Bootstrap with Ruby and Chef
+	./bootstrap.sh
+
 	# Run chef-solo
 	./solo.sh build '$attributes'
 
