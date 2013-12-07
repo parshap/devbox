@@ -1,0 +1,1 @@
+berks install --path build
