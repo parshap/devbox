@@ -12,8 +12,10 @@ running `chef-solo`.
 
 ## Usage
 
-**Install [Berkshelf][] first** and then just clone this repository. On
+1. **Install [Berkshelf][] first** and then just clone this repository. On
 Ubuntu you can use `install_berkshelf.sh` to install Berkshelf.
+
+1. Run `make` to build artifacts required for provisioning.
 
 [berkshelf]: http://berkshelf.com/
 

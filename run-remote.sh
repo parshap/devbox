@@ -6,9 +6,6 @@ attributes=$(cat attributes.json)
 # Remote directory to copy files to
 target=$(ssh $host mktemp -d)
 
-# Build cookbooks
-./build.sh
-
 # Copy files to remote host
 echo "Copying cookbooks to $host:$target"
 tar czf - --exclude='.git' . | \

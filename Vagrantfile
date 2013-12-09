@@ -1,6 +1,3 @@
-# Build cookbooks (used in provisioning)
-system("bash build.sh")
-
 BOX = if ENV["USE_32BIT"] then "precise32" else "precise64" end
 PROVISION_SCRIPT = <<-EOH
   # Give all users access to ssh agent socket
