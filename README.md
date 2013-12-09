@@ -1,8 +1,8 @@
 # devbox
 
-This is a set of tools to provision an environment for me to hack in
-using *[Chef][]*. It creates my user account and configures the system
-and configures the system using the [parshap coookbook][].
+This is a set of tools to provision an environment for me to hack in. It
+creates my user account and configures the system and configures the
+system using the *[Chef][]* [parshap cookbook][].
 
 It works by copying all required cookbooks to the target and then
 running `chef-solo`.
