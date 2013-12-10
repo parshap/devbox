@@ -6,8 +6,8 @@ PROVISION_SCRIPT = <<-EOH
 
   # Run Chef
   cd /vagrant
-  ./bootstrap.sh
-  ./solo.sh build "$(cat attributes.json)"
+  ./bootstrap
+  ./solo build "$(cat attributes.json)"
 EOH
 
 Vagrant.configure("2") do |config|

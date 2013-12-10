@@ -13,7 +13,7 @@ running `chef-solo`.
 ## Usage
 
 1. **Install [Berkshelf][] first** and then just clone this repository. On
-Ubuntu you can use `install_berkshelf.sh` to install Berkshelf.
+Ubuntu you can use `./install_berkshelf` to install Berkshelf.
 
 1. Run `make` to build artifacts required for provisioning.
 
@@ -21,14 +21,14 @@ Ubuntu you can use `install_berkshelf.sh` to install Berkshelf.
 
 ### Local Host
 
-To provision your local host use `run-local.sh`.
+To provision your local host use `./run-local`.
 
 ### Remote Host
 
-To provision a remote host use `run-remote.sh [user@]hostname`. For example:
+To provision a remote host use `./run-remote [user@]hostname`. For example:
 
 ```bash
-$ run-remote.sh parshap@dev.parshap.com
+$ ./run-remote parshap@dev.parshap.com
 ```
 
 ### Vagrant

@@ -1,5 +1,8 @@
+#!/usr/bin/env bash
+
 # Run Chef on a remote host
-# Usage: run-remote.sh parshap@home.parshap.com
+# Usage: ./run-remote parshap@home.parshap.com
+
 host=$1
 attributes=$(cat attributes.json)
 
@@ -17,10 +20,10 @@ ssh $host <<EOF
 	cd $target
 
 	# Bootstrap with Ruby and Chef
-	./bootstrap.sh
+	./bootstrap
 
 	# Run chef-solo
-	./solo.sh build '$attributes'
+	./solo build '$attributes'
 
 	# Remove files
 	rm -rf $target

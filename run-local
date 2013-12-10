@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Run Chef on local host
 attributes=$(cat attributes.json)
 
