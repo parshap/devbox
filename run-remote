@@ -7,24 +7,24 @@ host=$1
 attributes=$(cat attributes.json)
 
 # Remote directory to copy files to
-target=$(ssh $host mktemp -d)
+target=$(ssh "$host" mktemp -d)
 
 # Copy files to remote host
-echo "Copying cookbooks to $host:$target"
-tar czf - --exclude='.git' . | \
-	ssh $host tar -xzf - --no-same-owner --no-same-permissions -C $target
+echo "Copying to $host:$target"
+tar cz --exclude='.git' . | \
+	ssh "$host" tar -xz --no-same-owner --no-same-permissions -C "$target"
 
 # Execute on remote host
-ssh $host <<EOF
+ssh "$host" <<EOF
 	# Change directory to where files were copied
-	cd $target
+	cd "$target"
 
 	# Bootstrap with Ruby and Chef
 	./bootstrap
 
 	# Run chef-solo
-	./solo build '$attributes'
+	./solo build $(printf %q "$attributes")
 
 	# Remove files
-	rm -rf $target
+	rm -rf "$target"
 EOF
