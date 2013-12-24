@@ -4,7 +4,7 @@
 attributes=$(cat attributes.json)
 
 # Bootstrap with Ruby and Chef
-./bootstrap.sh
+./bootstrap
 
 # Run chef-solo
-./solo.sh build "$attributes"
+./solo build "$attributes"
