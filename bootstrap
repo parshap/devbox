@@ -29,7 +29,7 @@ apt_install build-essential
 
 # Install Chef
 chef_version=11.8.2
-chef_version_current=$(sudo chef-solo --version | awk ' { sub(/Chef: /, ""); print }')
+chef_version_current=$(sudo chef-solo --version 2>/dev/null | awk ' { sub(/Chef: /, ""); print }')
 if [ "$chef_version_current" != "$chef_version" ]
 then
 	sudo gem install --no-ri --no-rdoc chef -v $chef_version
