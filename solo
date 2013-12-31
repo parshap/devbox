@@ -15,4 +15,4 @@ echo "$attributes" > $json
 sudo chef-solo -c $rb -j $json
 
 # Remove temp files
-# rm $rb $json
+rm $rb $json
