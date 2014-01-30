@@ -1,1 +1,6 @@
+cookbook "git"
+cookbook "zsh"
+cookbook "vim"
+cookbook "tmux"
+cookbook "nodejs"
 cookbook "parshap", git: "git@github.com:parshap/parshap-cookbook.git"

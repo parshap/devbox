@@ -1,5 +1,10 @@
 {
 	"run_list": [
+		"recipe[git]",
+		"recipe[zsh]",
+		"recipe[vim]",
+		"recipe[tmux]",
+		"recipe[nodejs]",
 		"recipe[parshap]"
 	],
 	"nodejs": {
