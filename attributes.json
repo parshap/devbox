@@ -5,6 +5,7 @@
 		"recipe[vim]",
 		"recipe[tmux]",
 		"recipe[nodejs]",
+		"recipe[rake]",
 		"recipe[parshap]"
 	],
 	"nodejs": {
