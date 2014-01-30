@@ -38,3 +38,14 @@ To use Vagrant to provision a virtual machine use `vagrant up`.
 Use the `USE_32BIT` environment variable to use a 32-bit "precise32"
 base box instead of the default 64bit "precise64" box when initially
 creating the virtual machine.
+
+## OSX
+
+The `osx-bootstrap.sh` script will install some things on OSX. This is not the
+same as the chef cookbooks and should be used separately.
+
+### Manual Installs
+
+#### SIMBL + MouseTerm
+http://www.culater.net/software/SIMBL/SIMBL.php
+https://bitheap.org/mouseterm/
