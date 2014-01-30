@@ -9,6 +9,6 @@
 		"recipe[parshap]"
 	],
 	"nodejs": {
-		"version": "0.10.21"
+		"version": "0.10.25"
 	}
 }
