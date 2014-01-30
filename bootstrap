@@ -22,7 +22,7 @@ then
 fi
 
 # Install Ruby
-apt_install ruby2.0 ruby2.0-dev
+apt_install ruby2.1 ruby2.1-dev
 
 # Install build tools
 apt_install build-essential
