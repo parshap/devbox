@@ -19,8 +19,8 @@ brew install hub
 
 # Install less (for lesskey)
 (
-	cd tmp
-	http://www.greenwoodsoftware.com/less/less-458.tar.gz | tar -zxf -
+	cd /tmp
+	curl http://www.greenwoodsoftware.com/less/less-458.tar.gz | tar -zxf -
 	cd less-458
 	./configure
 	sudo make install
