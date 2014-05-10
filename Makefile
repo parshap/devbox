@@ -1,5 +1,5 @@
 default:
-	berks install --path build
+	berks vendor build
 
 clean:
 	rm -rf build
