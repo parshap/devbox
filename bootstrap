@@ -7,18 +7,31 @@ apt_install() {
 	sudo apt-get install --yes --no-install-recommends $@
 }
 
+apt_update() {
+	sudo apt-get -y update
+	touch /tmp/apt_update_last
+}
+
+# apt-get update once per day
+apt_update_if_stale() {
+	touch -d "-1 day" /tmp/apt_update_limit
+	if [ /tmp/apt_update_limit -nt /tmp/apt_update_last ]
+	then
+		apt_update
+	fi
+}
+
+apt_update_if_stale
+
 # Install add-apt-repository
 apt_install python-software-properties
 
 # Add Ruby PPA
-sudo add-apt-repository ppa:brightbox/ruby-ng-experimental
-
-# apt-get update once per day
-touch -d "-1 day" /tmp/apt_update_limit
-if [ /tmp/apt_update_limit -nt /tmp/apt_update_last ]
+if [ ! -f /etc/apt/sources.list.d/brightbox-ruby-ng-experimental-precise.list ]
 then
-	sudo apt-get -y update
-	touch /tmp/apt_update_last
+	sudo add-apt-repository ppa:brightbox/ruby-ng-experimental
+	# Always apt-get update after adding a ppa
+	apt_update
 fi
 
 # Install Ruby
