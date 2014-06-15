@@ -1,3 +1,14 @@
+# @TODO
+# * Install Apple Command Line Developer Tools
+# * Turn on SSH
+# * Auto-hide Dock
+# * Set Dock size small
+# * Remove things from Dock
+# * Set Keyboard Key Repeat and Delay
+# * Solarized Terminal Colors
+# * Set shell to /usr/local/bin/zsh (set /etc/shells)
+# * Set background to solid black
+
 # Make ~/projects directory
 mkdir ~/projects
 
@@ -5,17 +16,12 @@ mkdir ~/projects
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 
-# Install git
+# Install software using brew
 brew install git
-
-# Install tmux
 brew install tmux
-
-# Install nodejs
 brew install node
-
-# Install hub
 brew install hub
+brew install zsh
 
 # Install less (for lesskey)
 (
