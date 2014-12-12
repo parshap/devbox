@@ -1,1 +1,10 @@
  * Log chef-solo output
+ * Install gist & hub
+
+## OSX
+
+ * Chrome: Warn Before Quitting
+ * Install latest ruby (brew install ruby)
+ * Install berkshelf (sudo gem install berks)
+ * Install Chrome Google Voice and Video plugin
+ * Install lesskey
