@@ -1,14 +1,3 @@
-# @TODO
-# * Install Apple Command Line Developer Tools
-# * Turn on SSH
-# * Auto-hide Dock
-# * Set Dock size small
-# * Remove things from Dock
-# * Set Keyboard Key Repeat and Delay
-# * Solarized Terminal Colors
-# * Set shell to /usr/local/bin/zsh (set /etc/shells)
-# * Set background to solid black
-
 # Make ~/projects directory
 mkdir ~/projects
 

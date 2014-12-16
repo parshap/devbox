@@ -3,8 +3,17 @@
 
 ## OSX
 
+ * Install Apple Command Line Developer Tools
+ * Turn on SSH
+ * Auto-hide Dock
+ * Set Dock size small
+ * Remove things from Dock
+ * Set Keyboard Key Repeat and Delay
+ * Solarized Terminal Colors
+ * Set shell to /usr/local/bin/zsh (set /etc/shells)
+ * Set background to solid black
  * Chrome: Warn Before Quitting
  * Install latest ruby (brew install ruby)
  * Install berkshelf (sudo gem install berks)
  * Install Chrome Google Voice and Video plugin
- * Install lesskey
+ * https://gist.github.com/brandonb927/3195465
