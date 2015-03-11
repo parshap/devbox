@@ -13,7 +13,6 @@
  * Set shell to /usr/local/bin/zsh (set /etc/shells)
  * Set background to solid black
  * Chrome: Warn Before Quitting
- * Install latest ruby (brew install ruby)
  * Install berkshelf (sudo gem install berks)
  * Install Chrome Google Voice and Video plugin
  * https://gist.github.com/brandonb927/3195465
