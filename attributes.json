@@ -10,6 +10,12 @@
 		"recipe[parshap]"
 	],
 	"nodejs": {
-		"version": "0.10.28"
+		"install_method": "binary",
+		"binary": {
+			"checksum": {
+				"linux_x64": "e766e387934e17daaad92d0460ed76f756655da62b627a5c9cc07faea4a0b824"
+			}
+		},
+		"version": "4.2.1"
 	}
 }
