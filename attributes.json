@@ -6,6 +6,7 @@
 		"recipe[tmux]",
 		"recipe[nodejs]",
 		"recipe[rake]",
+		"recipe[root_ssh_agent::ppid]",
 		"recipe[parshap]"
 	],
 	"nodejs": {
