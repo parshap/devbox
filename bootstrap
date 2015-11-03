@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
 
 # Originally from https://gist.github.com/ruliana/5079371
 # This script will bootstrap a machine with Ruby and Chef
@@ -24,24 +24,25 @@ apt_update_if_stale() {
 apt_update_if_stale
 
 # Install add-apt-repository
-apt_install python-software-properties
+apt_install software-properties-common
 
 # Add Ruby PPA
-if [ ! -f /etc/apt/sources.list.d/brightbox-ruby-ng-experimental-precise.list ]
+ubuntu_codename=$(lsb_release --codename | cut -f2)
+if [ ! -f /etc/apt/sources.list.d/brightbox-ruby-ng-${ubuntu_codename}.list ]
 then
-	sudo add-apt-repository ppa:brightbox/ruby-ng-experimental
+	sudo apt-add-repository ppa:brightbox/ruby-ng
 	# Always apt-get update after adding a ppa
 	apt_update
 fi
 
 # Install Ruby
-apt_install ruby2.1 ruby2.1-dev
+apt_install ruby2.2 ruby2.2-dev
 
 # Install build tools
 apt_install build-essential
 
 # Install Chef
-chef_version=11.8.2
+chef_version=12.5.1
 chef_version_current=$(sudo chef-solo --version 2>/dev/null | awk ' { sub(/Chef: /, ""); print }')
 if [ "$chef_version_current" != "$chef_version" ]
 then
