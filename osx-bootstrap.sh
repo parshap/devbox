@@ -13,7 +13,12 @@ brew install \
 	tmux \
 	hub \
 	gist \
-	homebrew/dupes/less
+	homebrew/dupes/less \
+	reattach-to-user-namespace
+
+# Install vim (and override system vim)
+brew install vim --override-system-vim
+ln -s /usr/local/bin/vim /usr/local/bin/vi
 
 # Install oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -27,11 +32,12 @@ git clone git@github.com:parshap/dotfiles.git ~/projects/dotfiles
 (cd ~/projects/dotfiles; make)
 
 # Install homebrew cask
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 
 # Install cask packages
 brew cask install \
 	google-chrome \
 	firefox \
 	virtualbox \
-	vagrant
+	vagrant \
+	flux
