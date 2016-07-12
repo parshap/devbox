@@ -1,6 +1,4 @@
 # Install Berkshelf on Ubuntu
 sudo apt-get --no-install-recommends -y install \
-	autoconf \
-	libxml2-dev \
-	libxslt-dev
+	git
 sudo gem install berkshelf
