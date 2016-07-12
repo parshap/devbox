@@ -3,8 +3,11 @@ PROVISION_SCRIPT = <<-EOH
   set -e
 
   # Give all users access to ssh agent socket
-  chmod a+x $(dirname $SSH_AUTH_SOCK)
-  chmod a+rw $SSH_AUTH_SOCK
+  if [ ! -z "$SSH_AUTH_SOCK" ]
+  then
+    chmod a+x $(dirname $SSH_AUTH_SOCK)
+    chmod a+rw $SSH_AUTH_SOCK
+  fi
 
   # Run Chef
   cd /vagrant
