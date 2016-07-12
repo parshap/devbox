@@ -1,5 +1,7 @@
 BOX = "ubuntu/trusty" + if ENV["USE_32BIT"] then "32" else "64" end
 PROVISION_SCRIPT = <<-EOH
+  set -e
+
   # Give all users access to ssh agent socket
   chmod a+x $(dirname $SSH_AUTH_SOCK)
   chmod a+rw $SSH_AUTH_SOCK

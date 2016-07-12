@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/bash
+
+set -e
 
 # Originally from https://gist.github.com/ruliana/5079371
 # This script will bootstrap a machine with Ruby and Chef
