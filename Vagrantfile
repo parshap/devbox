@@ -12,6 +12,8 @@ PROVISION_SCRIPT = <<-EOH
   # Run Chef
   cd /vagrant
   ./bootstrap
+  ./install_berkshelf
+  make
   ./solo build "$(cat attributes.json)"
 EOH
 
