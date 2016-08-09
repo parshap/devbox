@@ -1,21 +1,21 @@
 {
-	"run_list": [
-		"recipe[git]",
-		"recipe[zsh]",
-		"recipe[vim]",
-		"recipe[tmux]",
-		"recipe[nodejs]",
-		"recipe[rake]",
-		"recipe[root_ssh_agent::ppid]",
-		"recipe[parshap]"
-	],
-	"nodejs": {
-		"install_method": "binary",
-		"binary": {
-			"checksum": {
-				"linux_x64": "e766e387934e17daaad92d0460ed76f756655da62b627a5c9cc07faea4a0b824"
-			}
-		},
-		"version": "4.2.1"
-	}
+  "run_list": [
+    "recipe[git]",
+    "recipe[zsh]",
+    "recipe[vim]",
+    "recipe[tmux]",
+    "recipe[nodejs]",
+    "recipe[rake]",
+    "recipe[root_ssh_agent::ppid]",
+    "recipe[parshap]"
+  ],
+  "nodejs": {
+    "install_method": "binary",
+    "binary": {
+      "checksum": {
+        "linux_x64": "e766e387934e17daaad92d0460ed76f756655da62b627a5c9cc07faea4a0b824"
+      }
+    },
+    "version": "4.2.1"
+  }
 }
