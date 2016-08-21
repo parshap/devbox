@@ -18,3 +18,8 @@
  * Install berkshelf (sudo gem install berks)
  * Install Chrome Google Voice and Video plugin
  * https://gist.github.com/brandonb927/3195465
+
+## Ubuntu Root SSH Agent Forwarding
+
+If root doesn't have permission to the shared $SSH_AUTH_SOCK see
+http://stackoverflow.com/a/26497532.
