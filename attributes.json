@@ -9,13 +9,21 @@
     "recipe[root_ssh_agent::ppid]",
     "recipe[parshap]"
   ],
+  "git": {
+    "version": "2.9.2"
+  },
+  "tmux": {
+    "install_method": "source",
+    "version": "2.2",
+    "checksum": "bc28541b64f99929fe8e3ae7a02291263f3c97730781201824c0f05d7c8e19e4"
+  },
   "nodejs": {
     "install_method": "binary",
     "binary": {
       "checksum": {
-        "linux_x64": "e766e387934e17daaad92d0460ed76f756655da62b627a5c9cc07faea4a0b824"
+        "linux_x64": "eccc530696d18b07c5785e317b2babbea9c1dd14dbab80be734b820fc241ddea"
       }
     },
-    "version": "4.2.1"
+    "version": "6.3.1"
   }
 }
