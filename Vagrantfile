@@ -1,4 +1,6 @@
-BOX = "ubuntu/trusty" + if ENV["USE_32BIT"] then "32" else "64" end
+BOX = "ubuntu/trusty" + if ENV["32BIT"] then "32" else "64" end
+MEMORY = (ENV["VM_MEMORY"] or 1024).to_i
+CPUS = (ENV["VM_CPUS"] or 1).to_i
 
 SSH_FORWARD_SCRIPT = <<-EOH
   set -e
@@ -32,6 +34,11 @@ EOH
 Vagrant.configure("2") do |config|
   config.vm.box = BOX
   config.ssh.forward_agent = true
+
+  config.vm.provider "virtualbox" do |vm|
+    vm.memory = MEMORY
+    vm.cpus = CPUS
+  end
 
   config.vm.provision :shell,
     inline: SSH_FORWARD_SCRIPT
