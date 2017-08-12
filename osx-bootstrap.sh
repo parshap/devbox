@@ -1,8 +1,11 @@
+#!/bin/bash
+set -e
+
 # Make ~/projects directory
-mkdir ~/projects
+mkdir -p ~/projects
 
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install packages using brew
 brew install \

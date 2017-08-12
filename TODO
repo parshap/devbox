@@ -11,7 +11,7 @@
  * Set Dock size small
  * Remove things from Dock
  * Set Keyboard Key Repeat and Delay
- * Solarized Terminal Colors
+ * Solarized Terminal Colors (https://github.com/tomislav/osx-terminal.app-colors-solarized)
  * Set shell to /usr/local/bin/zsh (set /etc/shells)
  * Set background to solid black
  * Chrome: Warn Before Quitting
