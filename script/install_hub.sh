@@ -2,7 +2,7 @@
 
 # Usage:
 #
-#     install-hub linux amd64 2.2.4
+#     install_hub.sh linux amd64 2.2.4
 #
 
 platform=$1
