@@ -10,20 +10,20 @@
     "recipe[parshap]"
   ],
   "git": {
-    "version": "2.9.2"
+    "version": "2.12.2"
   },
   "tmux": {
     "install_method": "source",
-    "version": "2.2",
-    "checksum": "bc28541b64f99929fe8e3ae7a02291263f3c97730781201824c0f05d7c8e19e4"
+    "version": "2.6",
+    "checksum": "b17cd170a94d7b58c0698752e1f4f263ab6dc47425230df7e53a6435cc7cd7e8"
   },
   "nodejs": {
     "install_method": "binary",
     "binary": {
       "checksum": {
-        "linux_x64": "eccc530696d18b07c5785e317b2babbea9c1dd14dbab80be734b820fc241ddea"
+        "linux_x64": "d57c391daef40e706ca71abeaf9d53271c9d0fdb9cd18a80f6296b04dbaf2d5a"
       }
     },
-    "version": "6.3.1"
+    "version": "10.0.0"
   }
 }

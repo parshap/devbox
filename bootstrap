@@ -38,13 +38,13 @@ then
 fi
 
 # Install Ruby
-apt_install ruby2.3 ruby2.3-dev
+apt_install ruby2.4 ruby2.4-dev
 
 # Install build tools
 apt_install build-essential
 
 # Install Chef
-chef_version=12.11.18
+chef_version=13.3.42
 chef_version_current=$(sudo chef-solo --version 2>/dev/null | awk ' { sub(/Chef: /, ""); print }')
 if [ "$chef_version_current" != "$chef_version" ]
 then
