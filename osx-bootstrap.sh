@@ -10,6 +10,7 @@ mkdir -p ~/projects
 # Install packages using brew
 brew install \
 	ruby \
+	python \
 	zsh \
 	git \
 	node \
@@ -17,7 +18,13 @@ brew install \
 	hub \
 	gist \
 	homebrew/dupes/less \
-	reattach-to-user-namespace
+	reattach-to-user-namespace \
+	jq \
+	md5sha1sum \
+	google-chrome \
+	firefox \
+	virtualbox \
+	vagrant
 
 # Install vim (and override system vim)
 brew install vim --override-system-vim
@@ -33,14 +40,3 @@ git clone git@github.com:carlhuda/janus.git ~/.vim
 # Install dotfiles
 git clone git@github.com:parshap/dotfiles.git ~/projects/dotfiles
 (cd ~/projects/dotfiles; make)
-
-# Install homebrew cask
-brew tap caskroom/cask
-
-# Install cask packages
-brew cask install \
-	google-chrome \
-	firefox \
-	virtualbox \
-	vagrant \
-	flux
