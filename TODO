@@ -23,3 +23,33 @@
 
 If root doesn't have permission to the shared $SSH_AUTH_SOCK see
 http://stackoverflow.com/a/26497532.
+
+## Raspberry Pi Notes
+
+> sudo apt-get update && sudo apt-get upgrade -y
+> sudo raspi-config
+
+Add to ~/.profile:
+
+```
+node_path=(/usr/local/lib/nodejs/node-*/bin)
+export PATH=$node_path:$PATH
+```
+
+> source ~/.profile
+
+> mkdir projects
+> cd projects/
+
+> sudo apt-get install git
+
+> git clone git@github.com:parshap/devbox.git
+> cd devbox/
+
+> ./linux-setup.sh
+
+Switch users to parshap
+
+Change shell to zsh
+
+Copy ~/.profile changes to ~/.zshrc
