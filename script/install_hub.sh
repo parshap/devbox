@@ -10,4 +10,4 @@ arch=$2
 version=$3
 
 curl -L http://github.com/github/hub/releases/download/v$version/hub-$platform-$arch-$version.tgz | \
-	tar --dir=/usr/local --strip-components=1 -zxvf -
+	sudo tar --dir=/usr/local --strip-components=1 -zxvf -

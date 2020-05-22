@@ -4,6 +4,9 @@ DIRNAME=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
 USER=parshap
 HOME_PATH="/home/$USER"
+HUB_VERSION="2.13.0"
+NODE_VERSION="13.6.0"
+NODE_DISTRO="linux-armv6l"
 
 # This script is an alternative to the Chef-based setup for Debian-based machines.
 
@@ -11,12 +14,19 @@ apt_install() {
   sudo apt-get install --yes --no-install-recommends $@
 }
 
+install_node() {
+  # https://unofficial-builds.nodejs.org/download/release/v13.6.0/node-v13.6.0-linux-armv6l.tar.gz
+  node_filename="node-v$NODE_VERSION-$NODE_DISTRO.tar.xz"
+  curl -O "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/$node_filename"
+  # sudo mkdir -p /usr/local/lib/nodejs
+  # sudo tar -xJvf $node_filename -C /usr/local/lib/nodejs
+  sudo tar --dir=/usr/local --strip-components=1 -xJvf "$node_filename"
+  rm $node_filename
+}
+
 install_packages() {
   # sudo apt-get update
   apt_install git zsh vim tmux ruby
-  # Node
-  curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-  apt_install nodejs
   # Cleanup
   sudo apt-get autoremove --yes
 }
@@ -34,7 +44,7 @@ setup_user() {
 
   # Passwordless sudo
   sudoers_path="/etc/sudoers.d/$USER"
-  echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee "$sudoers_path" > dev/null
+  echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee "$sudoers_path" > /dev/null
   sudo chown root:root "$sudoers_path"
   sudo chmod a-rw,u+r,g+r "$sudoers_path"
 
@@ -68,9 +78,10 @@ setup_janus() {
 
 $DIRNAME/script/setup_sudo_ssh_agent.sh
 install_packages
+install_node
 setup_locale
 setup_user
 setup_oh_my_zsh
 setup_dotfiles
 setup_janus
-$DIRNAME/script/install_hub.sh linux arm 2.2.9
+$DIRNAME/script/install_hub.sh linux arm "$HUB_VERSION"
