@@ -46,7 +46,13 @@ setup_user() {
 
   # Setup authorized_keys
   ssh_authorized_keys_path="$ssh_path/authorized_keys"
-  ssh-add -L | sudo tee -a "$ssh_authorized_keys_path" > /dev/null
+  ssh_pub_key_file=~/.ssh/id_rsa.pub
+  if [[ -f "$ssh_pub_key_file" ]]; then
+    cat "$ssh_pub_key_file" | sudo tee -a "$ssh_authorized_keys_path" > /dev/null
+  else
+    ssh-add -L | sudo tee -a "$ssh_authorized_keys_path" > /dev/null
+  fi
+
   sudo chown "$USER":"$USER" "$ssh_authorized_keys_path"
   sudo chmod a-rw,u+rw "$ssh_authorized_keys_path"
 }
