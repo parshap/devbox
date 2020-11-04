@@ -12,10 +12,7 @@ EOH
 PROVISION_SCRIPT = <<-EOH
   set -e
   cd /vagrant
-  ./bootstrap
-  ./install_berkshelf
-  make
-  ./solo build "$(cat attributes.json)"
+  ./linux-setup.sh
 EOH
 
 Vagrant.configure("2") do |config|
@@ -34,9 +31,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "public_network",
     use_dhcp_assigned_default_route: true
-
-  config.vm.provision :shell,
-    path: "script/setup_sudo_ssh_agent.sh"
 
   config.vm.provision :shell,
     inline: DISABLE_STRICT_HOST_KEY_CHECKING_SCRIPT
