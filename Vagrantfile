@@ -27,6 +27,9 @@ Vagrant.configure("2") do |config|
     vm.cpus = CPUS
   end
 
+  config.vm.network "public_network",
+    use_dhcp_assigned_default_route: true
+
   config.vm.provision :shell,
     path: "script/setup_sudo_ssh_agent.sh"
 
