@@ -4,7 +4,9 @@ DIRNAME=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
 USER=parshap
 HOME_PATH="/home/$USER"
-HUB_VERSION="2.13.0"
+HUB_VERSION="2.14.2"
+HUB_PLATFORM="linux"
+HUB_ARCH="amd64"
 NODE_VERSION="15.x"
 
 # This script is an alternative to the Chef-based setup for Debian-based machines.
@@ -72,4 +74,4 @@ setup_user
 setup_oh_my_zsh
 setup_dotfiles
 setup_janus
-$DIRNAME/script/install_hub.sh linux arm "$HUB_VERSION"
+$DIRNAME/script/install_hub.sh "$HUB_PLATFORM" "$HUB_ARCH" "$HUB_VERSION"
