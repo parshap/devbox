@@ -5,8 +5,7 @@ DIRNAME=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 USER=parshap
 HOME_PATH="/home/$USER"
 HUB_VERSION="2.13.0"
-NODE_VERSION="13.6.0"
-NODE_DISTRO="linux-armv6l"
+NODE_VERSION="15.x"
 
 # This script is an alternative to the Chef-based setup for Debian-based machines.
 
@@ -15,13 +14,8 @@ apt_install() {
 }
 
 install_node() {
-  # https://unofficial-builds.nodejs.org/download/release/v13.6.0/node-v13.6.0-linux-armv6l.tar.gz
-  node_filename="node-v$NODE_VERSION-$NODE_DISTRO.tar.xz"
-  curl -O "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/$node_filename"
-  # sudo mkdir -p /usr/local/lib/nodejs
-  # sudo tar -xJvf $node_filename -C /usr/local/lib/nodejs
-  sudo tar --dir=/usr/local --strip-components=1 -xJvf "$node_filename"
-  rm $node_filename
+  curl -sL https://deb.nodesource.com/setup_"$NODE_VERSION" | sudo -E bash -
+  sudo apt-get install -y nodejs
 }
 
 install_packages() {
