@@ -19,8 +19,8 @@ install_node() {
 }
 
 install_packages() {
-  # sudo apt-get update
-  apt_install git zsh vim tmux ruby
+  sudo apt-get update
+  apt_install build-essential net-tools git zsh vim tmux ruby
   # Cleanup
   sudo apt-get autoremove --yes
 }
