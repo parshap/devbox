@@ -53,6 +53,10 @@ choco install git gh kitty googlechrome firefox discord zoom licecap nodejs vagr
 Restart-Computer
 ```
 
+## Configure KiTTY
+
+https://blog.cochard.me/2014/09/putty-and-solarized-colors.html
+
 ## Future consideration
 
 * https://boxstarter.org/WhyBoxstarter
