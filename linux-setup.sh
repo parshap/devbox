@@ -28,7 +28,7 @@ install_packages() {
 setup_user() {
   # Create user
   zsh_bin=$(which zsh)
-  sudo adduser --home "$HOME_PATH" --shell "$zsh_bin" "$USER"
+  sudo adduser --disabled-password --gecos "" --home "$HOME_PATH" --shell "$zsh_bin" "$USER"
   sudo -u parshap mkdir -p "$HOME_PATH"
 
   # Passwordless sudo
