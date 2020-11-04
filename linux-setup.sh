@@ -25,11 +25,6 @@ install_packages() {
   sudo apt-get autoremove --yes
 }
 
-setup_locale() {
-  sudo sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
-  sudo locale-gen
-}
-
 setup_user() {
   # Create user
   zsh_bin=$(which zsh)
@@ -73,7 +68,6 @@ setup_janus() {
 $DIRNAME/script/setup_sudo_ssh_agent.sh
 install_packages
 install_node
-setup_locale
 setup_user
 setup_oh_my_zsh
 setup_dotfiles
