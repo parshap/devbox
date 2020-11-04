@@ -27,6 +27,11 @@ Vagrant.configure("2") do |config|
     vm.cpus = CPUS
   end
 
+  config.vm.provider "hyperv" do |vm|
+    vm.maxmemory = MEMORY
+    vm.cpus = CPUS
+  end
+
   config.vm.network "public_network",
     use_dhcp_assigned_default_route: true
 
