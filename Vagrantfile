@@ -1,6 +1,6 @@
 BOX = "ubuntu/trusty" + if ENV["32BIT"] then "32" else "64" end
-MEMORY = (ENV["VM_MEMORY"] or 1024).to_i
-CPUS = (ENV["VM_CPUS"] or 1).to_i
+MEMORY = (ENV["VM_MEMORY"] or 8192).to_i
+CPUS = (ENV["VM_CPUS"] or 2).to_i
 
 DISABLE_STRICT_HOST_KEY_CHECKING_SCRIPT = <<-EOH
   set -e
