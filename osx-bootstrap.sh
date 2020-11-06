@@ -9,26 +9,17 @@ mkdir -p ~/projects
 
 # Install packages using brew
 brew install \
-	ruby \
-	python \
+	less \
 	zsh \
+	vim \
+	tmux \
 	git \
 	node \
-	tmux \
-	hub \
+	gh \
 	gist \
-	homebrew/dupes/less \
-	reattach-to-user-namespace \
-	jq \
-	md5sha1sum \
-	google-chrome \
-	firefox \
-	virtualbox \
-	vagrant
+	jq
 
-# Install vim (and override system vim)
-brew install vim --override-system-vim
-ln -s /usr/local/bin/vim /usr/local/bin/vi
+brew cask install google-chrome
 
 # Install oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
