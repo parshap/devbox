@@ -1,6 +1,16 @@
 #!/bin/bash
 set -e
 
+# Additioanl things to do:
+#
+# set trackpad speed
+# turn on auto dark mode
+# turn on night mode automatic (or custom)
+# set keyboard delay
+# set terminal default theme font (sf mono regular 14)
+# create ~/.ssh dir
+# get ssh key
+
 # Make ~/projects directory
 mkdir -p ~/projects
 
